@@ -4,8 +4,8 @@
 var generatePassword = function() {
   
   var passwordLength = prompt("How many characters would you like your password? (8-128)");
-  if (passwordLength < 8 || passwordLength > 128 || passwordLength === null) {
-    alert("Please choose a length between 8 and 128.");
+  if (passwordLength < 8 || passwordLength > 128 || passwordLength === null || isNaN(passwordLength) === true) {
+    alert("Please choose a number between 8 and 128.");
     return generatePassword();
   }
   localStorage.setItem("Password length", passwordLength);
